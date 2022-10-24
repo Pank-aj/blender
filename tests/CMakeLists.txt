@@ -14,9 +14,6 @@ else()
   endif()
 endif()
 
-# The installation directory's Python is the best one to use. However, it can only be there after the install step,
-# which means that Python will never be there on a fresh system. To suit different needs, the user can pass
-# -DTEST_PYTHON_EXE=/path/to/python to CMake.
 if(NOT TEST_PYTHON_EXE)
   set(TEST_PYTHON_EXE ${PYTHON_EXECUTABLE})
   message(STATUS "Tests: Using Python executable: ${TEST_PYTHON_EXE}")
@@ -36,8 +33,7 @@ set(TEST_BLENDER_EXE_PARAMS --background -noaudio --factory-startup --debug-memo
 if(WITH_BLENDER AND WITH_PYTHON AND NOT WITH_PYTHON_MODULE)
   add_subdirectory(python)
 endif()
-
-# Blender as python module tests.
+\
 if(WITH_PYTHON_MODULE)
   add_subdirectory(blender_as_python_module)
 endif()
