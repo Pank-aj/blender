@@ -17,11 +17,6 @@
  *  - Blend Expand: Defines which other data blocks should be loaded (possibly from other files).
  *
  * Each of these callbacks uses a different API functions.
- *
- * Some parts of Blender, e.g. modifiers, don't require you to implement all four callbacks.
- * Instead only the first two are necessary. The other two are handled by general ID management. In
- * the future, we might want to get rid of those two callbacks entirely, but for now they are
- * necessary.
  */
 
 #pragma once
